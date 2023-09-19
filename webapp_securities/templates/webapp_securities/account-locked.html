@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block page_title %}Account locked{% endblock page_title %}
+
+{% block content %}
+  <div class="container-md d-flex justify-content-center">
+    <div class="mycon my-5 p-4 rounded-4 shadow bg-white text-center">
+      <i class="fa-solid fa-lock fa-4x mt-3"></i>
+      <h1 class="mt-4">Account locked</h1>
+      <hr>
+      <p class="mt-5 text-secondary">You've been locked out of your account due to multiple login attempts.</p>
+      <p class="text-secondary">Try to login again after an hour.</p>
+      <a class="btn btn-lg btn-outline-danger mt-4 px-4" href="{% url "home" %}">Return Home</a>
+    </div>
+  </div>
+{% endblock content %}

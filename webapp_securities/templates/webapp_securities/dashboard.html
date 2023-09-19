@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block page_title %}Dashboard{% endblock page_title %}
+
+{% block active_1 %}active{% endblock active_1 %}
+
+{% block content %}
+  <div class="container-md">
+    <h1>Welcome, {{user}}</h1>
+
+    <div>
+      <h2>About us</h2>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure doloremque velit voluptates dicta culpa illo perspiciatis, aut at necessitatibus repudiandae.</p>
+    </div>
+
+    <div>
+      <h3>Two Factor Authentication</h3>
+      <p>2FA provides users with extra security on their accounts.</p>
+      <a class="btn btn-outline-primary" href="{% url "two_factor:setup" %}">Enable 2FA</a>
+      <a class="btn btn-outline-primary" href="{% url "two_factor:profile" %}">2FA settings</a>
+    </div>
+  </div>
+
+  {{ redirect_to_login_immediately }}
+{% endblock content %}

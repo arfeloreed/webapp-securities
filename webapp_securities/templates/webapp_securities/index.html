@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}ReedSecure{% endblock page_title %}
+
+{% block content %}
+{% if messages %}
+  {% for message in messages %}
+    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+      <p id="message-timer" class="alert alert-success text-center"><i class="fa-solid fa-user-check"></i> &nbsp;{{message}}</p>
+    {% endif %}
+  {% endfor %}
+{% endif %}
+
+<div class="container-md text-center">
+  <img src="{% static "webapp_securities/images/lock.png" %}" alt="Brand Image" style="height: 100px; width: 100px;">
+  <h3>ReedSecure- The most secure website out there! </h3>
+  <p> Ensure that your Django web application is secure in all areas. </p>
+  <a class="btn btn-primary" type="button"  href="{% url 'register' %}"><i class="fa fa-user" aria-hidden="true"></i> &nbsp; Make an account </a>
+</div>
+
+<footer class="bg-white mt-5">
+  <div class="container-md text-center">
+    <a class="btn btn-info py-2 px-3" type="button"  href="{% url "password_reset" %}"><i class="fa fa-key" aria-hidden="true"></i> &nbsp;Reset password</a>
+  </div>
+</footer>
+{% endblock content %}

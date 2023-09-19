@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block page_title %}Register{% endblock page_title %}
+
+{% block active_2 %}active{% endblock active_2 %}
+
+{% block content %}
+  <div class="container-md shadow mycon p-4 rounded-3 my-5 bg-white">
+    <h1>Register</h1>
+
+    <form action="" method="POST">
+      {% csrf_token %}
+      {{form|crispy}}
+      <button class="btn btn-lg btn-primary px-5 mt-4" type="submit">Register</button>
+    </form>
+
+    <hr>
+
+    <div class="container-md text-center">
+      <p>Already have an account?</p>
+      <a href="{% url "two_factor:login" %}">Login</a>
+    </div>
+
+  </div>
+{% endblock content %}

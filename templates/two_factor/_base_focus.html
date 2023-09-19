@@ -1,0 +1,14 @@
+{% extends "two_factor/_base.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block active_3 %}active{% endblock  %}
+{% block content_wrapper %}
+  <div class="container-md mt-5 border p-4 shadow">
+    <div class="row">
+      <div class="col">
+        {% block content %}{% endblock %}
+      </div>
+    </div>
+  </div>
+{% endblock %}
